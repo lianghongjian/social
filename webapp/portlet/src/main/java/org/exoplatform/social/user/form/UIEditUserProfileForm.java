@@ -439,7 +439,7 @@ public class UIEditUserProfileForm extends UIForm {
       }
     } else {
       // Invalid-format-date
-      if (startDate.getCalendar() == null || (startDate.getValue().indexOf("-") >= 0)) {
+      if (startDate.getCalendar() == null) {
         warning("UIEditUserProfileForm.msg.Invalid-format-date", getLabel(Profile.EXPERIENCES_START_DATE), DATE_FORMAT_MMDDYYYY);
         return null;
       }
@@ -452,7 +452,7 @@ public class UIEditUserProfileForm extends UIForm {
       }
       if (!isCurrent) {
         // end date empty
-        if (endDate.getValue() == null || endDate.getValue().isEmpty()) {
+        if (endDate.getValue() == null ) {
           warning("EmptyFieldValidator.msg.empty-input", getLabel(Profile.EXPERIENCES_END_DATE));
           return null;
         }

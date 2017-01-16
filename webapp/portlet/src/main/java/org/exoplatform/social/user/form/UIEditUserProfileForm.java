@@ -452,12 +452,12 @@ public class UIEditUserProfileForm extends UIForm {
       }
       if (!isCurrent) {
         // end date empty
-        if (endDate.getValue() == null ) {
+        if (endDate.getValue() == null || endDate.getValue().isEmpty()) {
           warning("EmptyFieldValidator.msg.empty-input", getLabel(Profile.EXPERIENCES_END_DATE));
           return null;
         }
         // Invalid-format-date
-        if (endDate.getCalendar() == null || (endDate.getValue().indexOf("-") >= 0)) {
+        if (endDate.getCalendar() == null ) {
           warning("UIEditUserProfileForm.msg.Invalid-format-date", getLabel(Profile.EXPERIENCES_END_DATE), DATE_FORMAT_MMDDYYYY);
           return null;
         }
